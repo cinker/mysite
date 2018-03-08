@@ -19,3 +19,6 @@ rank
 logics
 * trading time
 * clearing duration
+
+scrapy fund/NAV
+fund status
