@@ -13,6 +13,7 @@ class Instruction(models.Model):
     trade_ts = models.DateTimeField()
     trade_direction = models.CharField(max_length=1)
     trader = models.CharField(max_length=20)
+    trading_fee = models.FloatField()
 
 
 class FundInfo(models.Model):
@@ -48,11 +49,3 @@ class Trader(models.Model):
     balance = models.FloatField()
 
 
-class Question(models.Model):
-    def __str__(self):
-        return self.question_text
-    question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
-
-    def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
