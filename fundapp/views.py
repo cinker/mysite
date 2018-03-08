@@ -1,8 +1,16 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.http import HttpResponse
+from django.shortcuts import render
+
+from .models import FundInfo
+
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    latest_fund_list = FundInfo.objects.all()[:5]
+    context = {
+        'latest_fund_list': latest_fund_list,
+    }
+    return render(request, 'fundapp/index.html', context)
+

@@ -17,7 +17,7 @@ class Instruction(models.Model):
 
 class FundInfo(models.Model):
     def __str__(self):
-        return self.fund_code
+        return self.fund_name
     fund_code = models.CharField(max_length=20)
     fund_name = models.CharField(max_length=40)
     fund_type = models.CharField(max_length=2)

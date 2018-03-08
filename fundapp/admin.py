@@ -3,6 +3,10 @@ from django.contrib import admin
 # Register your models here.
 from django.contrib import admin
 
-from mysite.fundapp.models import Question
+from .models import Instruction, FundInfo, FundPara, FundTrade, Trader
 
-admin.site.register(Question)
+admin.site.register(Instruction)
+admin.site.register(FundInfo)
+admin.site.register(FundTrade)
+admin.site.register(FundPara)
+admin.site.register(Trader)
